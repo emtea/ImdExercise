@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Services.Common", "Imd.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Tests.Common", "Imd.Tests.Common\Imd.Tests.Common.csproj", "{5C2CB314-F422-4B64-8156-3D569B256530}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Services.ShowReel", "Imd.Services.ShowReel\Imd.Services.ShowReel.csproj", "{B221F19F-0A71-4ACF-BB27-390169F28B57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{5C2CB314-F422-4B64-8156-3D569B256530}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C2CB314-F422-4B64-8156-3D569B256530}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C2CB314-F422-4B64-8156-3D569B256530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B221F19F-0A71-4ACF-BB27-390169F28B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B221F19F-0A71-4ACF-BB27-390169F28B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B221F19F-0A71-4ACF-BB27-390169F28B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B221F19F-0A71-4ACF-BB27-390169F28B57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{B0D873FF-D79F-4856-8F98-F52705774C89} = {1F4D8694-BEE4-4809-B36A-8DC06AECB635}
 		{9465763B-6E28-4207-9E5A-79E3829A0132} = {03DAD690-59E7-491E-88E8-2348CA2C3709}
 		{5C2CB314-F422-4B64-8156-3D569B256530} = {1F4D8694-BEE4-4809-B36A-8DC06AECB635}
+		{B221F19F-0A71-4ACF-BB27-390169F28B57} = {03DAD690-59E7-491E-88E8-2348CA2C3709}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3832C30F-8D55-4C58-9AF5-B3F0292FD2FC}
