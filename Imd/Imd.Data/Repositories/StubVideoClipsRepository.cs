@@ -17,7 +17,7 @@ namespace Imd.Data.Repositories
             inMemoryClips = Seed();
         }
 
-        public VideoClip Delete(Guid id)
+        public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }

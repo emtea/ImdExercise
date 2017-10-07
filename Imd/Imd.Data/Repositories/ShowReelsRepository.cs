@@ -8,7 +8,7 @@ namespace Imd.Data.Repositories
 {
     public class ShowReelsRepository : IShowReelsRepository<ShowReel>
     {
-        public ShowReel Delete(Guid id)
+        public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }

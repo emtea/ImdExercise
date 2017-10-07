@@ -11,6 +11,8 @@ using Swashbuckle.AspNetCore.Swagger;
 using Imd.Data.Interfaces;
 using Imd.Data.Repositories;
 using Imd.Domain.Models;
+using Imd.Services.ShowReels.Interfaces;
+using Imd.Services.ShowReels;
 
 namespace Imd_Web_App
 {
@@ -27,9 +29,13 @@ namespace Imd_Web_App
         public void ConfigureServices(IServiceCollection services)
         {
             //DI
-            services.AddScoped<IShowReelsRepository<ShowReel>, ShowReelsRepository>((ctx) =>
+            services.AddScoped<IShowReelsService, ShowReelsService>((ctx) =>
             {
-                return new ShowReelsRepository();
+                return new ShowReelsService(ctx.GetService<IShowReelsRepository<ShowReel>>());
+            });
+            services.AddScoped<IShowReelsRepository<ShowReel>, StubShowReelsRepository>((ctx) =>
+            {
+                return new StubShowReelsRepository();
             });
             services.AddScoped<IVideoClipsRepository<VideoClip>, StubVideoClipsRepository>((ctx) =>
             {

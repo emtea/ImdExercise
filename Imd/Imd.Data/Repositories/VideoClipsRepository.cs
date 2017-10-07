@@ -8,7 +8,7 @@ namespace Imd.Data.Repositories
 {
     public class VideoClipsRepository : IVideoClipsRepository<VideoClip>
     {
-        public VideoClip Delete(Guid id)
+        public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }

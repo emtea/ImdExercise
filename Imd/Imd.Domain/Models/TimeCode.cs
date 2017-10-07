@@ -6,22 +6,55 @@ namespace Imd.Domain.Models
 {
     public class TimeCode
     {
-        public short HH { get; set; }
-        public short MM { get; set; }
-        public short ss { get; set; }
-        public short ff { get; set; }
+        public TimeSpan Value { get; set; }
 
-        public TimeCode(short HH, short MM, short ss, short ff)
+        public int HH
         {
-            this.HH = HH;
-            this.MM = MM;
-            this.ss = ss;
-            this.ff = ff;
+            get
+            {
+                return Value.Hours;
+            }
+        }
+        public int MM
+        {
+            get
+            {
+                return Value.Minutes;
+            }
+        }
+        public int ss
+        {
+            get
+            {
+                return Value.Seconds;
+            }
+        }
+
+        public int ff
+        {
+            get
+            {
+                return Value.Milliseconds;
+            }
+        }
+
+        public TimeCode(int HH, int MM, int ss, int ff)
+        {
+            Value = new TimeSpan(0, HH, MM, ss, ff);
+        }
+
+        public TimeCode(TimeSpan value)
+        {
+            Value = value;
         }
 
         public override string ToString()
         {
-            return String.Format("{0}:{1}:{2}:{3}", HH, MM, ss, ff);
+            return String.Format("{0}:{1}:{2}:{3}", 
+                HH.ToString("00"), 
+                MM.ToString("00"), 
+                ss.ToString("00"), 
+                ff.ToString("00"));
         }
     }
 }

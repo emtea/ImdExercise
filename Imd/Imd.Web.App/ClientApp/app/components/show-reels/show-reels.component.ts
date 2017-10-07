@@ -6,18 +6,21 @@ import { Http } from '@angular/http';
     templateUrl: './show-reels.component.html'
 })
 export class FetchDataComponent {
-    public forecasts: WeatherForecast[];
+    public showReels: ShowReel[];
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
-        http.get(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
-            this.forecasts = result.json() as WeatherForecast[];
+        http.get(baseUrl + 'api/Reels').subscribe(result => {
+            this.showReels = result.json() as ShowReel[];
         }, error => console.error(error));
     }
 }
 
-interface WeatherForecast {
-    dateFormatted: string;
-    temperatureC: number;
-    temperatureF: number;
-    summary: string;
+interface ShowReel {
+    id: string;
+    name: string;
+    vStandard: string;
+    vStandardString: string;
+    vDefinition: string;
+    vDefinitionString: string;
+    durationString: string;
 }

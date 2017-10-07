@@ -14,6 +14,16 @@ namespace Imd.Domain.Models
         public VideoDefinition VDefinition { get; set; }
         public TimeCode Start { get; set; }
         public TimeCode End { get; set; }
+        public TimeCode Duration
+        {
+            get
+            {
+                if (End != null && Start != null)
+                    return new TimeCode(End.Value.Subtract(Start.Value));
+                else
+                    return new TimeCode(00, 00, 00, 00);
+            }
+        }
 
         public VideoClip()
         {
