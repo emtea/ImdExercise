@@ -35,7 +35,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Services.Common", "Imd.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Tests.Common", "Imd.Tests.Common\Imd.Tests.Common.csproj", "{5C2CB314-F422-4B64-8156-3D569B256530}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Services.ShowReel", "Imd.Services.ShowReel\Imd.Services.ShowReel.csproj", "{B221F19F-0A71-4ACF-BB27-390169F28B57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Services.ShowReels", "Imd.Services.ShowReel\Imd.Services.ShowReels.csproj", "{B221F19F-0A71-4ACF-BB27-390169F28B57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

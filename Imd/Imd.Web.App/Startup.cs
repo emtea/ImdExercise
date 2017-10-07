@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
+using Imd.Data.Interfaces;
+using Imd.Data.Repositories;
+using Imd.Domain.Models;
 
 namespace Imd_Web_App
 {
@@ -23,6 +26,16 @@ namespace Imd_Web_App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //DI
+            services.AddScoped<IShowReelsRepository<ShowReel>, ShowReelsRepository>((ctx) =>
+            {
+                return new ShowReelsRepository();
+            });
+            services.AddScoped<IVideoClipsRepository<VideoClip>, StubVideoClipsRepository>((ctx) =>
+            {
+                return new StubVideoClipsRepository();
+            });
+
             services.AddMvc();
 
             // Register the Swagger generator, defining one or more Swagger documents

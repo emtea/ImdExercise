@@ -5,12 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Imd.Data\Imd.Data.csproj" />
     <ProjectReference Include="..\Imd.Domain\Imd.Domain.csproj" />
-    <ProjectReference Include="..\Imd.Services.ShowReel\Imd.Services.ShowReels.csproj" />
   </ItemGroup>
 
 </Project>

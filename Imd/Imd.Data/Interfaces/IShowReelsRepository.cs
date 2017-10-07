@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Imd.Data.Interfaces
 {
-    public interface IShowReelsRepository<T> : IRepository<T> where T: ShowReel
+    public interface IShowReelsRepository<ShowReel> : IRepository<ShowReel>
     {
         
     }
