@@ -22,7 +22,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\models\showReel.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Imd.Web.Api\Imd.Web.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\models\showReel.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

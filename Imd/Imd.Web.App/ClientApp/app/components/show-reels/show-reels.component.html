@@ -2,6 +2,10 @@
 
 <p>< Description to be added ></p>
 
+<hr />
+
+<p><a [routerLink]="['/add']">Add new reel</a></p>
+
 <p *ngIf="!showReels"><em>Loading...</em></p>
 
 <table class='table' *ngIf="showReels">
@@ -20,7 +24,8 @@
             <td>{{ showReel.vStandardString }} (FPS: {{ showReel.vStandard }})</td>
             <td>{{ showReel.vDefinitionString }}</td>
             <td>{{ showReel.durationString }}</td>
-            <td>View</td>
+            <td><a [routerLink]="['add-reel']">View</a></td>
         </tr>
     </tbody>
 </table>
+

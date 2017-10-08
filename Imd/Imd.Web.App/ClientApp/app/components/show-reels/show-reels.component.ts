@@ -5,11 +5,11 @@ import { Http } from '@angular/http';
     selector: 'show-reels',
     templateUrl: './show-reels.component.html'
 })
-export class FetchDataComponent {
+export class ShowReelsComponent {
     public showReels: ShowReel[];
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
-        http.get(baseUrl + 'api/Reels').subscribe(result => {
+        http.get(baseUrl + 'api/Reels/all').subscribe(result => {
             this.showReels = result.json() as ShowReel[];
         }, error => console.error(error));
     }

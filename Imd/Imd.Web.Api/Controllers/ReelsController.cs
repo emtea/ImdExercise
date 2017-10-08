@@ -19,6 +19,7 @@ namespace Imd.Web.Api.Controllers
         }
 
         [HttpGet]
+        [Route("all")]
         [ProducesResponseType(typeof(List<ShowReel>), 200)]
         public IActionResult GetAll()
         {
@@ -27,7 +28,7 @@ namespace Imd.Web.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         [ProducesResponseType(typeof(ShowReel), 200)]
         public IActionResult Get(Guid id)
         {

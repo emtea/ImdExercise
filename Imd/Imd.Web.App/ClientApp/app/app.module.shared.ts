@@ -7,15 +7,15 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/show-reels/show-reels.component';
-import { CounterComponent } from './components/counter/counter.component';
+import { ShowReelsComponent } from './components/show-reels/show-reels.component';
+import { AddReelComponent } from './components/add-reel/add-reel.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
-        FetchDataComponent,
+        AddReelComponent,
+        ShowReelsComponent,
         HomeComponent
     ],
     imports: [
@@ -25,8 +25,8 @@ import { CounterComponent } from './components/counter/counter.component';
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'show-reels', component: FetchDataComponent },
+            { path: 'show-reels', component: ShowReelsComponent },
+            { path: 'add-reel', component: AddReelComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
