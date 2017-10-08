@@ -1,60 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static Imd.Domain.Enums;
 
 namespace Imd.Domain.Models
 {
     public class TimeCode
     {
-        public TimeSpan Value { get; set; }
+        public VideoStandard Standard { get; set; }
+        public TimeSpan TimeSpan { get; set; }
+        public int Frames { get; set; }
 
-        public int HH
+        //public int HH
+        //{
+        //    get
+        //    {
+        //        return Value.Hours;
+        //    }
+        //}
+        //public int MM
+        //{
+        //    get
+        //    {
+        //        return Value.Minutes;
+        //    }
+        //}
+        //public int ss
+        //{
+        //    get
+        //    {
+        //        return Value.Seconds;
+        //    }
+        //}
+        //public int ff
+        //{
+        //    get
+        //    {
+        //        return Value./*Milliseconds*/;
+        //    }
+        //}
+
+        public TimeCode(int HH, int MM, int ss, int ff, VideoStandard videoStandard)
         {
-            get
-            {
-                return Value.Hours;
-            }
-        }
-        public int MM
-        {
-            get
-            {
-                return Value.Minutes;
-            }
-        }
-        public int ss
-        {
-            get
-            {
-                return Value.Seconds;
-            }
+            Standard = videoStandard;
+            TimeSpan = new TimeSpan(0, HH, MM, ss, 0);
+            Frames = ff;
         }
 
-        public int ff
+        public TimeCode(TimeSpan timeSpan, int ff, VideoStandard videoStandard)
         {
-            get
-            {
-                return Value.Milliseconds;
-            }
-        }
-
-        public TimeCode(int HH, int MM, int ss, int ff)
-        {
-            Value = new TimeSpan(0, HH, MM, ss, ff);
-        }
-
-        public TimeCode(TimeSpan value)
-        {
-            Value = value;
+            Standard = videoStandard;
+            Frames = ff;
+            TimeSpan = timeSpan;
         }
 
         public override string ToString()
         {
             return String.Format("{0}:{1}:{2}:{3}", 
-                HH.ToString("00"), 
-                MM.ToString("00"), 
-                ss.ToString("00"), 
-                ff.ToString("00"));
+                TimeSpan.Hours.ToString("00"),
+                TimeSpan.Minutes.ToString("00"), 
+                TimeSpan.Seconds.ToString("00"), 
+                Frames.ToString("00"));
         }
     }
 }

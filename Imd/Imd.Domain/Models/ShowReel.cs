@@ -36,11 +36,16 @@ namespace Imd.Domain.Models
             {
                 if (VideoClips != null && VideoClips.Count > 0)
                 {
-                    return new TimeCode(new TimeSpan(VideoClips.Sum(vc => vc.Duration.Value.Ticks)));
+                    TimeSpan timeVal = new TimeSpan(VideoClips.Sum(vc => vc.Duration.TimeSpan.Ticks))
+                        .Add(new TimeSpan(0, 0, VideoClips.Sum(vc => vc.Duration.Frames) / (int)VStandard));
+
+                    int framesValue = VideoClips.Sum(vc => vc.Duration.Frames) % (int)VStandard;
+
+                    return new TimeCode(timeVal, framesValue, VStandard);
                 }
                 else
                 {
-                    return new TimeCode(00, 00, 00, 00);
+                    return new TimeCode(0, 0, 0, 0, VStandard);
                 }
             }
         }

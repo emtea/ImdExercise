@@ -19,9 +19,25 @@ namespace Imd.Domain.Models
             get
             {
                 if (End != null && Start != null)
-                    return new TimeCode(End.Value.Subtract(Start.Value));
+                {
+                    TimeSpan timeVal;
+                    int framesValue;
+
+                    if (End.Frames - (Start.Frames - 1) < 0)
+                    {
+                        timeVal = End.TimeSpan.Subtract(Start.TimeSpan).Subtract(new TimeSpan(0, 0, 1));
+                        framesValue = End.Frames - Start.Frames + (int)VStandard;
+                    }
+                    else
+                    {
+                        timeVal = End.TimeSpan.Subtract(Start.TimeSpan);
+                        framesValue = End.Frames - Start.Frames;
+                    }
+
+                    return new TimeCode(timeVal, framesValue, VStandard);
+                }
                 else
-                    return new TimeCode(00, 00, 00, 00);
+                    return new TimeCode(0, 0, 0, 0, VStandard);
             }
         }
 

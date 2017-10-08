@@ -11,24 +11,39 @@ namespace Imd.Data.Repositories
     public class StubShowReelsRepository : IShowReelsRepository<ShowReel>
     {
         private IList<ShowReel> showReels;
+        private IVideoClipsRepository<VideoClip> videoClipsRepository;
 
-        public StubShowReelsRepository()
+        public StubShowReelsRepository(IVideoClipsRepository<VideoClip> videoClipsRepository)
         {
+            this.videoClipsRepository = videoClipsRepository;
+
+            var all_PAL_SD_Clips = videoClipsRepository.GetAll().Where(vc =>
+                                        vc.VStandard == VideoStandard.PAL
+                                        && vc.VDefinition == VideoDefinition.SD)
+                                        .ToList();
+
+            var all_NTSC_SD_Clips = videoClipsRepository.GetAll().Where(vc =>
+                                        vc.VStandard == VideoStandard.NTSC
+                                        && vc.VDefinition == VideoDefinition.SD)
+                                        .ToList();
+
             showReels = new List<ShowReel>()
             {
                 new ShowReel
                 {
                     Id = Guid.NewGuid(),
-                    Name = "Sample Reel",
-                    VStandard = VideoStandard.NTSC,
-                    VDefinition = VideoDefinition.HD
+                    Name = "Sample Reel - all PAL/SD",
+                    VStandard = VideoStandard.PAL,
+                    VDefinition = VideoDefinition.SD,
+                    VideoClips = all_PAL_SD_Clips
                 },
                 new ShowReel
                 {
                     Id = Guid.NewGuid(),
-                    Name = "Another Reel",
-                    VStandard = VideoStandard.PAL,
-                    VDefinition = VideoDefinition.SD
+                    Name = "Another Reel - all NTSC/SD",
+                    VStandard = VideoStandard.NTSC,
+                    VDefinition = VideoDefinition.SD,
+                    VideoClips = all_NTSC_SD_Clips
                 }
             };
         }

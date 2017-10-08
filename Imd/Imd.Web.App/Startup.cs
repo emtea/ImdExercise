@@ -33,10 +33,12 @@ namespace Imd_Web_App
             {
                 return new ShowReelsService(ctx.GetService<IShowReelsRepository<ShowReel>>());
             });
+
             services.AddScoped<IShowReelsRepository<ShowReel>, StubShowReelsRepository>((ctx) =>
             {
-                return new StubShowReelsRepository();
+                return new StubShowReelsRepository(ctx.GetService<IVideoClipsRepository<VideoClip>>());
             });
+
             services.AddScoped<IVideoClipsRepository<VideoClip>, StubVideoClipsRepository>((ctx) =>
             {
                 return new StubVideoClipsRepository();
