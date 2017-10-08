@@ -8,6 +8,7 @@ namespace Imd.Services.ShowReels.Interfaces
     public interface IShowReelsService
     {
         IList<ShowReel> RetrieveReelsPerUser();
-
+        ShowReel ReelUpsert(ShowReel showReel);
+        ShowReel RetrieveReel(Guid id);
     }
 }

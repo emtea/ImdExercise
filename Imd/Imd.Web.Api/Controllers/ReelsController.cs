@@ -20,10 +20,27 @@ namespace Imd.Web.Api.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(List<ShowReel>), 200)]
-        public IActionResult Get()
+        public IActionResult GetAll()
         {
             var result = showReelService.RetrieveReelsPerUser();
 
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(ShowReel), 200)]
+        public IActionResult Get(Guid id)
+        {
+            ShowReel result = showReelService.RetrieveReel(id);
+
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(typeof(ShowReel), 200)]
+        public IActionResult Post(ShowReel showReel)
+        {
+            ShowReel result = showReelService.ReelUpsert(showReel);
             return Ok(result);
         }
     }

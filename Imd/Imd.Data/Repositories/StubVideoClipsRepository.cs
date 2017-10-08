@@ -17,6 +17,11 @@ namespace Imd.Data.Repositories
             inMemoryClips = Seed();
         }
 
+        public IList<VideoClip> Get(VideoStandard vStandard, VideoDefinition vDefinition)
+        {
+            return inMemoryClips.Where(vc => vc.VStandard == vStandard && vc.VDefinition == vDefinition).ToList();
+        }
+
         public void Delete(Guid id)
         {
             throw new NotImplementedException();
@@ -36,6 +41,11 @@ namespace Imd.Data.Repositories
         {
             //todo: filtering using user id to be added
             return inMemoryClips.ToList();
+        }
+
+        public VideoClip Create(VideoClip obj)
+        {
+            throw new NotImplementedException();
         }
 
         public VideoClip Update(VideoClip obj)

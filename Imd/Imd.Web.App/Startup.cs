@@ -13,6 +13,8 @@ using Imd.Data.Repositories;
 using Imd.Domain.Models;
 using Imd.Services.ShowReels.Interfaces;
 using Imd.Services.ShowReels;
+using Imd.Services.VideoClips.Interfaces;
+using Imd.Services.VideoClips;
 
 namespace Imd_Web_App
 {
@@ -34,12 +36,17 @@ namespace Imd_Web_App
                 return new ShowReelsService(ctx.GetService<IShowReelsRepository<ShowReel>>());
             });
 
-            services.AddScoped<IShowReelsRepository<ShowReel>, StubShowReelsRepository>((ctx) =>
+            services.AddScoped<IVideoClipsService, VideoClipsService>((ctx) =>
+            {
+                return new VideoClipsService(ctx.GetService<IVideoClipsRepository<VideoClip>>());
+            });
+
+            services.AddSingleton<IShowReelsRepository<ShowReel>, StubShowReelsRepository>((ctx) =>
             {
                 return new StubShowReelsRepository(ctx.GetService<IVideoClipsRepository<VideoClip>>());
             });
 
-            services.AddScoped<IVideoClipsRepository<VideoClip>, StubVideoClipsRepository>((ctx) =>
+            services.AddSingleton<IVideoClipsRepository<VideoClip>, StubVideoClipsRepository>((ctx) =>
             {
                 return new StubVideoClipsRepository();
             });

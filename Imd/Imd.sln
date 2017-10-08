@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Domain", "Imd.Domain\Imd.Domain.csproj", "{CD01BEDE-335A-4835-A299-0381A84B0A50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imd.Domain", "Imd.Domain\Imd.Domain.csproj", "{CD01BEDE-335A-4835-A299-0381A84B0A50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Data", "Imd.Data\Imd.Data.csproj", "{C34C07C2-6F7C-40D5-98C3-5663CC429977}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imd.Data", "Imd.Data\Imd.Data.csproj", "{C34C07C2-6F7C-40D5-98C3-5663CC429977}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Imd.Database", "Imd.Database\Imd.Database.sqlproj", "{5B0F946E-F98E-4DE5-A4B6-252AF9DCD63A}"
 EndProject
@@ -21,21 +21,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{29D66FC1-D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1F4D8694-BEE4-4809-B36A-8DC06AECB635}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Web.Api", "Imd.Web.Api\Imd.Web.Api.csproj", "{6A1166E8-B0A2-454F-B853-727B4F33EDC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imd.Web.Api", "Imd.Web.Api\Imd.Web.Api.csproj", "{6A1166E8-B0A2-454F-B853-727B4F33EDC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Web.App", "Imd.Web.App\Imd.Web.App.csproj", "{F2904B22-77D9-4827-88BC-B1C4ADEEA215}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imd.Web.App", "Imd.Web.App\Imd.Web.App.csproj", "{F2904B22-77D9-4827-88BC-B1C4ADEEA215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Tests.Api", "Imd.Tests.Api\Imd.Tests.Api.csproj", "{B26631E4-EDBF-40E0-81B5-109D114E0F07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imd.Tests.Api", "Imd.Tests.Api\Imd.Tests.Api.csproj", "{B26631E4-EDBF-40E0-81B5-109D114E0F07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Tests.DataAccessLayer", "Imd.Tests.DataAccessLayer\Imd.Tests.DataAccessLayer.csproj", "{39F44E37-F699-448D-9E5D-5950B4E3FC9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imd.Tests.DataAccessLayer", "Imd.Tests.DataAccessLayer\Imd.Tests.DataAccessLayer.csproj", "{39F44E37-F699-448D-9E5D-5950B4E3FC9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Tests.Integration", "Imd.Tests.Integration\Imd.Tests.Integration.csproj", "{B0D873FF-D79F-4856-8F98-F52705774C89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imd.Tests.Integration", "Imd.Tests.Integration\Imd.Tests.Integration.csproj", "{B0D873FF-D79F-4856-8F98-F52705774C89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Services.Common", "Imd.Services.Common\Imd.Services.Common.csproj", "{9465763B-6E28-4207-9E5A-79E3829A0132}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imd.Services.Common", "Imd.Services.Common\Imd.Services.Common.csproj", "{9465763B-6E28-4207-9E5A-79E3829A0132}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Tests.Common", "Imd.Tests.Common\Imd.Tests.Common.csproj", "{5C2CB314-F422-4B64-8156-3D569B256530}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imd.Tests.Common", "Imd.Tests.Common\Imd.Tests.Common.csproj", "{5C2CB314-F422-4B64-8156-3D569B256530}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Services.ShowReels", "Imd.Services.ShowReel\Imd.Services.ShowReels.csproj", "{B221F19F-0A71-4ACF-BB27-390169F28B57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imd.Services.ShowReels", "Imd.Services.ShowReel\Imd.Services.ShowReels.csproj", "{B221F19F-0A71-4ACF-BB27-390169F28B57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imd.Services.VideoClips", "Imd.Services.VideoClips\Imd.Services.VideoClips.csproj", "{7148839B-FE56-4530-B04B-4411A6C84676}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,10 @@ Global
 		{B221F19F-0A71-4ACF-BB27-390169F28B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B221F19F-0A71-4ACF-BB27-390169F28B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B221F19F-0A71-4ACF-BB27-390169F28B57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7148839B-FE56-4530-B04B-4411A6C84676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7148839B-FE56-4530-B04B-4411A6C84676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7148839B-FE56-4530-B04B-4411A6C84676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7148839B-FE56-4530-B04B-4411A6C84676}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +111,7 @@ Global
 		{9465763B-6E28-4207-9E5A-79E3829A0132} = {03DAD690-59E7-491E-88E8-2348CA2C3709}
 		{5C2CB314-F422-4B64-8156-3D569B256530} = {1F4D8694-BEE4-4809-B36A-8DC06AECB635}
 		{B221F19F-0A71-4ACF-BB27-390169F28B57} = {03DAD690-59E7-491E-88E8-2348CA2C3709}
+		{7148839B-FE56-4530-B04B-4411A6C84676} = {03DAD690-59E7-491E-88E8-2348CA2C3709}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3832C30F-8D55-4C58-9AF5-B3F0292FD2FC}

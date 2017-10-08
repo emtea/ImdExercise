@@ -20,5 +20,24 @@ namespace Imd.Services.ShowReels
         {
             return showReelsRepository.GetAll();
         }
+
+        public ShowReel ReelUpsert(ShowReel showReel)
+        {
+            ShowReel result;
+            if(showReel.Id != null && showReel.Id != Guid.Empty)
+            {
+                result = showReelsRepository.Update(showReel);
+            }
+            else
+            {
+                result = showReelsRepository.Create(showReel);
+            }
+            return result;
+        }
+
+        public ShowReel RetrieveReel(Guid id)
+        {
+            return showReelsRepository.Get(id);
+        }
     }
 }

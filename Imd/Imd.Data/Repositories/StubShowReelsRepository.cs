@@ -10,7 +10,7 @@ namespace Imd.Data.Repositories
 {
     public class StubShowReelsRepository : IShowReelsRepository<ShowReel>
     {
-        private IList<ShowReel> showReels;
+        private IList<ShowReel> inMemoryShowReels;
         private IVideoClipsRepository<VideoClip> videoClipsRepository;
 
         public StubShowReelsRepository(IVideoClipsRepository<VideoClip> videoClipsRepository)
@@ -27,7 +27,7 @@ namespace Imd.Data.Repositories
                                         && vc.VDefinition == VideoDefinition.SD)
                                         .ToList();
 
-            showReels = new List<ShowReel>()
+            inMemoryShowReels = new List<ShowReel>()
             {
                 new ShowReel
                 {
@@ -48,6 +48,13 @@ namespace Imd.Data.Repositories
             };
         }
 
+        public ShowReel Create(ShowReel obj)
+        {
+            obj.Id = Guid.NewGuid();
+            inMemoryShowReels.Add(obj);
+            return obj;
+        }
+
         public void Delete(Guid id)
         {
             throw new NotImplementedException();
@@ -55,22 +62,25 @@ namespace Imd.Data.Repositories
 
         public ShowReel Get(Guid id)
         {
-            return showReels.Where(reel => reel.Id == id).FirstOrDefault();
+            return inMemoryShowReels.Where(reel => reel.Id == id).FirstOrDefault();
         }
 
         public IList<ShowReel> GetAll()
         {
-            return showReels;
+            return inMemoryShowReels;
         }
 
         public IList<ShowReel> GetAll(Guid userId)
         {
-            return showReels;
+            return inMemoryShowReels;
         }
 
         public ShowReel Update(ShowReel obj)
         {
-            throw new NotImplementedException();
+            var oldObj = inMemoryShowReels.Where(sr => sr.Id == obj.Id).First();
+            inMemoryShowReels.Remove(oldObj);
+            inMemoryShowReels.Add(obj);
+            return obj;
         }
     }
 }

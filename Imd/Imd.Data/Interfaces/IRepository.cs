@@ -9,6 +9,7 @@ namespace Imd.Data.Interfaces
         IList<T> GetAll();
         IList<T> GetAll(Guid userId);
         T Get(Guid id);
+        T Create(T obj);
         T Update(T obj);
         void Delete(Guid id);
     }

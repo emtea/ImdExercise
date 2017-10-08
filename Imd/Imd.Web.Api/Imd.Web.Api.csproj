@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Imd.Domain\Imd.Domain.csproj" />
     <ProjectReference Include="..\Imd.Services.ShowReel\Imd.Services.ShowReels.csproj" />
+    <ProjectReference Include="..\Imd.Services.VideoClips\Imd.Services.VideoClips.csproj" />
   </ItemGroup>
 
 </Project>
